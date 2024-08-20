@@ -36,9 +36,8 @@ def main():
 
     # Buton pentru a adăuga un rând gol
     if st.button("Adaugă un rând gol"):
-        st.session_state.df = st.session_state.df.append(
-            pd.Series(["", "", 0, ""], index=st.session_state.df.columns), ignore_index=True
-        )
+        empty_row = pd.DataFrame([["", "", 0, ""]], columns=st.session_state.df.columns)
+        st.session_state.df = pd.concat([st.session_state.df, empty_row], ignore_index=True)
 
     # Buton pentru a salva datele (în sesiune, local sau în alt loc)
     if st.button("Salvează modificările"):
@@ -49,13 +48,12 @@ def main():
     new_image_url = st.text_input("Introdu link-ul către imagine:")
     
     if new_image_url:
-        # Adaugă link-ul ca un nou rând în tabel
-        st.session_state.df = st.session_state.df.append(
-            pd.Series([new_image_url, "", 0, ""], index=st.session_state.df.columns), ignore_index=True
-        )
+        new_row = pd.DataFrame([[new_image_url, "", 0, ""]], columns=st.session_state.df.columns)
+        st.session_state.df = pd.concat([st.session_state.df, new_row], ignore_index=True)
         st.success("Link-ul către imagine a fost adăugat în tabel!")
 
 if __name__ == "__main__":
     main()
+
 
 
