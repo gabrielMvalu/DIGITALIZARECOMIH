@@ -15,9 +15,9 @@ def load_data():
             "Echipament 3"
         ],
         "Preț": [
-            1000,
-            1500,
-            2000
+            "1000€",
+            "1500€",
+            "2000€"
         ],
         "Link": [
             "https://www.example.com/produs1",
@@ -36,7 +36,7 @@ def display_table(df):
                 help="Link către imaginea echipamentului sau software-ului",
             ),
             "Descriere": "Descriere",
-            "Preț": st.column_config.NumberColumn("Preț", format="€{:,.2f}"),
+            "Preț": "Preț",
             "Link": st.column_config.LinkColumn("Link"),
         },
         num_rows="dynamic",
