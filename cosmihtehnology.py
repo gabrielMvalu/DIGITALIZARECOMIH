@@ -1,9 +1,30 @@
 import streamlit as st
 import pandas as pd
 
-# Funcția pentru a inițializa un DataFrame gol sau a-l încărca dintr-o sursă externă
+# Funcția pentru a inițializa un DataFrame cu date predefinite
 def load_data():
-    return pd.DataFrame(columns=["Avatar", "Descriere", "Preț", "Link"])
+    return pd.DataFrame({
+        "Avatar": [
+            "https://storage.googleapis.com/s4a-prod-share-preview/default/st_app_screenshot_image/5435b8cb-6c6c-490b-9608-799b543655d3/Home_Page.png",
+            "https://storage.googleapis.com/s4a-prod-share-preview/default/st_app_screenshot_image/ef9a7627-13f2-47e5-8f65-3f69bb38a5c2/Home_Page.png",
+            "https://storage.googleapis.com/s4a-prod-share-preview/default/st_app_screenshot_image/31b99099-8eae-4ff8-aa89-042895ed3843/Home_Page.png",
+        ],
+        "Descriere": [
+            "Echipament 1",
+            "Echipament 2",
+            "Echipament 3"
+        ],
+        "Preț": [
+            1000,
+            1500,
+            2000
+        ],
+        "Link": [
+            "https://www.example.com/produs1",
+            "https://www.example.com/produs2",
+            "https://www.example.com/produs3"
+        ]
+    })
 
 # Funcția pentru a afișa și edita tabelul
 def display_table(df):
@@ -27,36 +48,11 @@ def display_table(df):
 def main():
     st.title("Monitorizare Soluții Echipamente și Software")
 
-    # Inițializează sau încarcă datele
-    if "df" not in st.session_state:
-        st.session_state.df = load_data()
+    # Încarcă datele predefinite
+    df = load_data()
 
     # Afișează tabelul și permite editarea
-    st.session_state.df = display_table(st.session_state.df)
-
-    # Buton pentru a adăuga un rând gol
-    if st.button("Adaugă un rând gol"):
-        empty_row = pd.DataFrame([["", "", 0, ""]], columns=st.session_state.df.columns)
-        st.session_state.df = pd.concat([st.session_state.df, empty_row], ignore_index=True)
-
-    # Buton pentru a salva datele (în sesiune, local sau în alt loc)
-    if st.button("Salvează modificările"):
-        st.success("Modificările au fost salvate!")
-
-    # Gestionarea adăugării unui link pentru imagine
-    st.write("## Adaugă un link către imagine")
-    
-    if "new_image_url" not in st.session_state:
-        st.session_state.new_image_url = ""
-
-    new_image_url = st.text_input("Introdu link-ul către imagine:", st.session_state.new_image_url)
-    
-    if st.button("Adaugă imaginea"):
-        if new_image_url:
-            new_row = pd.DataFrame([[new_image_url, "", 0, ""]], columns=st.session_state.df.columns)
-            st.session_state.df = pd.concat([st.session_state.df, new_row], ignore_index=True)
-            st.success("Link-ul către imagine a fost adăugat în tabel!")
-            st.session_state.new_image_url = ""  # Resetarea câmpului de text după adăugare
+    display_table(df)
 
 if __name__ == "__main__":
     main()
