@@ -5,22 +5,22 @@ import pandas as pd
 def load_data():
     return pd.DataFrame({
         "Avatar": [
-            "https://storage.googleapis.com/s4a-prod-share-preview/default/st_app_screenshot_image/5435b8cb-6c6c-490b-9608-799b543655d3/Home_Page.png",
+            "https://s13emagst.akamaized.net/products/42022/42021954/images/res_d497184c433aa52544254dc3ff7772e6.png",
             "https://storage.googleapis.com/s4a-prod-share-preview/default/st_app_screenshot_image/ef9a7627-13f2-47e5-8f65-3f69bb38a5c2/Home_Page.png",
             "https://storage.googleapis.com/s4a-prod-share-preview/default/st_app_screenshot_image/31b99099-8eae-4ff8-aa89-042895ed3843/Home_Page.png",
         ],
         "Descriere": [
-            "Echipament 1",
+            "Sistem Desktop PC Powerup AQUA Intel Core i9 14900K 24Core 6.0Ghz, RTX 4090 24GB GDDR6 384bit, 64GB DDR5 6000Mhz, SSD 4TB M.2, 1000W, Custom Watercooling",
             "Echipament 2",
             "Echipament 3"
         ],
         "Preț": [
-            "1000€",
+            "36.533RON",
             "1500€",
             "2000€"
         ],
         "Link": [
-            "https://www.example.com/produs1",
+            "https://www.emag.ro/sistem-desktop-pc-powerup-aqua-intel-core-i9-14900k-24core-6-0ghz-rtx-4090-24gb-gddr6-384bit-64gb-ddr5-6000mhz-ssd-4tb-m-2-1000w-custom-watercooling-336699/pd/DRNGCTYBM/?X-Search-Id=2d2a3f29c4a3e5cd2dc8&X-Product-Id=156269361&X-Search-Page=1&X-Search-Position=7&X-Section=search&X-MB=0&X-Search-Action=view",
             "https://www.example.com/produs2",
             "https://www.example.com/produs3"
         ]
