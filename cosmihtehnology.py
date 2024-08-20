@@ -43,17 +43,24 @@ def main():
     if st.button("Salvează modificările"):
         st.success("Modificările au fost salvate!")
 
-    # Exemplu de introducere manuală a unui link pentru imagine
+    # Gestionarea adăugării unui link pentru imagine
     st.write("## Adaugă un link către imagine")
-    new_image_url = st.text_input("Introdu link-ul către imagine:")
     
-    if new_image_url:
-        new_row = pd.DataFrame([[new_image_url, "", 0, ""]], columns=st.session_state.df.columns)
-        st.session_state.df = pd.concat([st.session_state.df, new_row], ignore_index=True)
-        st.success("Link-ul către imagine a fost adăugat în tabel!")
+    if "new_image_url" not in st.session_state:
+        st.session_state.new_image_url = ""
+
+    new_image_url = st.text_input("Introdu link-ul către imagine:", st.session_state.new_image_url)
+    
+    if st.button("Adaugă imaginea"):
+        if new_image_url:
+            new_row = pd.DataFrame([[new_image_url, "", 0, ""]], columns=st.session_state.df.columns)
+            st.session_state.df = pd.concat([st.session_state.df, new_row], ignore_index=True)
+            st.success("Link-ul către imagine a fost adăugat în tabel!")
+            st.session_state.new_image_url = ""  # Resetarea câmpului de text după adăugare
 
 if __name__ == "__main__":
     main()
+
 
 
 
