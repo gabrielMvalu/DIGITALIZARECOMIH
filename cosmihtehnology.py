@@ -1,6 +1,26 @@
 import streamlit as st
 import pandas as pd
 
+# Stil CSS personalizat pentru a face tabelul să ocupe întreaga lățime și să împacheteze textul
+st.markdown(
+    """
+    <style>
+    .dataframe-container {
+        max-width: 100%;
+    }
+    .data-editor .st-DataFrame td {
+        white-space: normal;
+        word-wrap: break-word;
+    }
+    .stApp {
+        max-width: 100%;
+        padding: 0;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 # Funcția pentru a inițializa un DataFrame cu date predefinite
 def load_data():
     return pd.DataFrame({
@@ -56,6 +76,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
