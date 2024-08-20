@@ -65,45 +65,45 @@ with tab2:
 
     # Soluțiile software propuse în col1
     with col1:
-        st.subheader("Internet și Conectivitate")
-        
-        # Prima soluție
-        st.write("**Acces la Internet pentru 50% din angajați**")
-        st.write("Preț: 1.000 RON")
-        st.write("[Detalii Produs](https://www.example.com/produs4)")
+        st.subheader("Software CAD și BIM")
 
-        # A doua soluție
-        st.write("**Acces la Internet de mare viteză (cel puțin 30 Mbps)**")
-        st.write("Preț: 1.200 RON")
-        st.write("[Detalii Produs](https://www.example.com/produs5)")
+        # Prima soluție
+        st.write("**Autodesk Architecture, Engineering & Construction Collection**")
+        st.write("Preț: 4.102 Euro/an")
+        st.write("[Detalii Produs](https://www.autodesk.com/eu/collections/architecture-engineering-construction/overview?term=1&tab=subscription)")
+
+        # Cursuri pentru soluția Autodesk
+        st.write("**Cursuri pentru Autodesk Architecture, Engineering & Construction**")
+        st.write("Preț: momentan nu avem oferta de preț!")
+        st.write("[Detalii Cursuri](https://www.autodesk.com/eu/collections/architecture-engineering-construction/overview?term=1&tab=subscription)")
 
     # Soluțiile software propuse în col2
     with col2:
-        st.subheader("Contracte IT și Servicii")
+        st.subheader("Site web de prezentare / site web functii complexe")
 
         # Prima soluție
-        st.write("**Contracte încheiate cu specialiști IT**")
-        st.write("Preț: 3.000 RON")
+        st.write("**Website**")
+        st.write("Preț: de la 1490€ euro")
         st.write("[Detalii Produs](https://www.example.com/produs6)")
 
         # A doua soluție
         st.write("**Achiziționarea de servicii de cloud computing de nivel mediu-mare**")
         st.write("Preț: 2.500 RON")
-        st.write("[Detalii Produs](https://www.example.com/produs7)")
+        st.write("[Detalii Produs](https://webage.ro/pret-site-web/?gad_source=1&gbraid=0AAAAADqflNLcPYkwBIhaNQtdlrvKakCCr&gclid=CjwKCAjw_ZC2BhAQEiwAXSgClgTokNiyMRYoSDsg9_PrL9EhKfhp2kVtKE4eiA9mru-1qrtxH9haABoC7i8QAvD_BwE#preturi)")
 
     # Soluțiile software propuse în col3
     with col3:
-        st.subheader("E-commerce și Publicitate Online")
+        st.subheader("Sisteme de calcul structural")
 
         # Prima soluție
-        st.write("**Număr soluții pentru publicitatea plătită online**")
-        st.write("Preț: 1.500 RON")
-        st.write("[Detalii Produs](https://www.example.com/produs8)")
+        st.write("**Arxiv de la Consoft**")
+        st.write("Preț: momentan nu avem oferta de preț!")
+        st.write("[Detalii Produs](https://www.consoft.ro/axisvm/info/x7/)")
 
-        # A doua soluție
-        st.write("**Realizarea de vânzări prin intermediul comerțului electronic**")
-        st.write("Preț: 4.000 RON")
-        st.write("[Detalii Produs](https://www.example.com/produs9)")
+        # Soluția pentru E-commerce și Publicitate Online
+        st.write("**soluții pentru publicitate**")
+        st.write("Preț: 1.500 - 2500 RON")
+        st.write("[Detalii Produs](https://generator.adroltenia.ro)")
 
 
 
