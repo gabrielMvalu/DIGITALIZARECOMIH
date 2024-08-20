@@ -1,5 +1,46 @@
 import streamlit as st
 
+# Definim preturile pentru fiecare solutie
+preturi_hardware = {
+    "Sistem Desktop PC Powerup AQUA Intel Core i9 14900K": 36533,
+    "Sistem Powerup ROG AMD Ryzen 9 7950X": 32989,
+    "Mac Studio, Apple M2 Ultra": 21999,
+    "Sistem Mini Apple Mac Studio, M2 Ultra": 28865,
+    "QNAP hibrid NAS": 3822,
+    "Asustor NAS": 4103
+}
+
+preturi_software = {
+    "Autodesk AEC Collection": 4102 * 4.9,  # convertit in RON
+    "Website de prezentare": 1490 * 4.9,  # convertit in RON
+    "Publicitate Online": 2500
+}
+
+# Sidebar pentru calculator
+st.sidebar.header("Calculator Total Soluții")
+
+# Selectează un calculator
+calculator_selectat = st.sidebar.selectbox(
+    "Selectează un calculator",
+    list(preturi_hardware.keys())[:4]
+)
+
+# Selectează un NAS
+nas_selectat = st.sidebar.selectbox(
+    "Selectează o soluție NAS",
+    list(preturi_hardware.keys())[4:6]
+)
+
+# Selectează soluția software
+software_selectat = st.sidebar.selectbox(
+    "Selectează soluția software",
+    list(preturi_software.keys())
+)
+
+# Afișează totalul
+pret_total = preturi_hardware[calculator_selectat] + preturi_hardware[nas_selectat] + preturi_software[software_selectat]
+st.sidebar.write(f"**Cost Total:** {pret_total:.2f} RON")
+
 # Definim tab-urile principale pentru categorii de soluții
 tab1, tab2 = st.tabs(["Soluții Hardware", "Soluții Software"])
 
