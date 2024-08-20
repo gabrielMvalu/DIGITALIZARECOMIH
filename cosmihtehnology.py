@@ -15,14 +15,14 @@ with tab1:
 
         # Prima ofertă pentru Windows
         st.image("https://s13emagst.akamaized.net/products/42022/42021954/images/res_d497184c433aa52544254dc3ff7772e6.png", width=150)
-        st.write("Sistem Desktop PC Powerup AQUA Intel Core i9 14900K")
+        st.write("Sistem Desktop PC Powerup AQUA Intel Core i9 14900K 24Core 6.0Ghz, RTX 4090 24GB GDDR6 384bit, 64GB DDR5 6000Mhz, SSD 4TB M.2, 1000W, Custom Watercooling")
         st.write("Preț: 36.533 RON")
         st.write("[Detalii Produs](https://www.emag.ro/sistem-desktop-pc-powerup-aqua-intel-core-i9-14900k-24core-6-0ghz-rtx-4090-24gb-gddr6-384bit-64gb-ddr5-6000mhz-ssd-4tb-m-2-1000w-custom-watercooling-336699/pd/DRNGCTYBM/?X-Search-Id=2d2a3f29c4a3e5cd2dc8&X-Product-Id=156269361&X-Search-Page=1&X-Search-Position=7&X-Section=search&X-MB=0&X-Search-Action=view)")
 
         # A doua ofertă pentru Windows
-        st.image("https://s13emagst.akamaized.net/products/42022/42021954/images/res_d497184c433aa52544254dc3ff7772e6.png", width=150)
+        st.image("https://s13emagst.akamaized.net/products/28486/28485377/images/res_ae7bed7e7ffd9a706e2f7f869d4aae08.jpg", width=150)
         st.write("Sistem Powerup ROG AMD Ryzen 9 7950X 16Core 5.7Ghz, RTX 4090 24GB GDDR6X 384bit, 64GB DDR5, SSD 2TB M.2, 1000W, Custom Watercooling, Windows 11 PRO")
-        st.write("Preț: 32.999 RON")
+        st.write("Preț: 32.989 RON")
         st.write("[Detalii Produs](https://www.emag.ro/sistem-powerup-rog-amd-ryzen-9-7950x-16core-5-7ghz-rtx-4090-24gb-gddr6x-384bit-64gb-ddr5-ssd-2tb-m-2-1000w-custom-watercooling-windows-11-pro/pd/DKB02YBBM/)")
 
     # Coloana pentru sistemele Apple
@@ -30,32 +30,32 @@ with tab1:
         st.subheader("Sisteme Apple")
 
         # Prima ofertă pentru Apple
-        st.image("https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/imac-24-green-selection-hero-202104?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1617479510000", width=150)
-        st.write("Apple iMac 24-inch with Retina 4.5K display")
-        st.write("Preț: 10.999 RON")
-        st.write("[Detalii Produs](https://www.apple.com/imac-24/)")
+        st.image("https://istyle.ro/media/catalog/product/cache/image/e9c3970ab036de70892d86c6d221abfe/m/a/mac_studio_pdp_image_position-1__wwen_2_2_2_1.jpg", width=150)
+        st.write("Mac Studio, procesor Apple M2 Ultra, 24 nuclee CPU and 60 nuclee GPU, 64GB, 1TB")
+        st.write("Preț: 21.999 RON")
+        st.write("[Detalii Produs](https://istyle.ro/mac-studio-procesor-apple-m2-ultra-24-nuclee-cpu-and-60-nuclee-gpu-64gb-1tb.html)")
 
         # A doua ofertă pentru Apple
-        st.image("https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-13-finishes-hero-202206?wid=4000&hei=3072&fmt=jpeg&qlt=90&.v=1653493200207", width=150)
-        st.write("Apple MacBook Air 13-inch M2")
-        st.write("Preț: 8.499 RON")
-        st.write("[Detalii Produs](https://www.apple.com/macbook-air-m2/)")
+        st.image("https://cdn.forit.ro/images/products/img_202306241139/458188/full/sistem-mini-apple-mac-studio-procesor-m2-ultra-64gb-ram-1tb-ssd-60-cores-gpu-macos-int-755639.jpg", width=150)
+        st.write("Sistem Mini Apple Mac Studio, Procesor M2 Ultra, 64GB RAM, 1TB SSD, 60 cores GPU, macOS, INT")
+        st.write("Preț: 28.865 RON")
+        st.write("[Detalii Produs](https://www.forit.ro/sisteme-mini/apple/458188-mac-studio-procesor-m2-ultra-64gb-ram-1tb-ssd-60-cores-gpu-macos-int/?gad_source=1&gbraid=0AAAAADHLg72siqybntl7-cMBbIZ1YFv77&gclid=CjwKCAjw_ZC2BhAQEiwAXSgClrLP5G2j-UPBB2Aputg-k1oHF0f3c2Yeft3Oo09oGV7xYWBKAIDDrRoC1y8QAvD_BwE)")
 
     # Coloana pentru sistemele hardware NAS
     with col3:
         st.subheader("Sisteme NAS (Back Solutions)")
 
         # Prima ofertă pentru NAS
-        st.image("https://static.synology.com/en-global/products/DS920+/images/1_2000x2000.png", width=150)
-        st.write("Synology DiskStation DS920+ NAS")
-        st.write("Preț: 2.800 RON")
-        st.write("[Detalii Produs](https://www.synology.com/en-global/products/DS920+)")
+        st.image("https://s13emagst.akamaized.net/products/37892/37891461/images/res_35e15b3fc1818673c5fb4ae488919a1d.jpg", width=150)
+        st.write("Unitate NAS, QNAP hibrid 2 sertare+2x slot SSD, HS-453DX-8G 4x1,8 GHz, 8 GB RAM, 1x100/1000, 1 x 10GBASE-T, 3xUSB3.2, 2xUSB2.0")
+        st.write("Preț: 3.822 RON")
+        st.write("[Detalii Produs](https://www.emag.ro/unitate-nas-qnap-hibrid-2-sertare-2x-slot-ssd-4x1-8-ghz-8-gb-ram-1x100-1000-1-x-10gbase-t-3xusb3-2-2xusb2-0-hs-453dx-8g/pd/DDD8B0MBM/?X-Search-Id=2859ed51ada888339b40&X-Product-Id=122646789&X-Search-Page=1&X-Search-Position=32&X-Section=search&X-MB=0&X-Search-Action=view)")
 
         # A doua ofertă pentru NAS
-        st.image("https://static.qnap.com/images/products/hs-453dx_1.png", width=150)
-        st.write("QNAP HS-453DX Silent NAS")
-        st.write("Preț: 3.200 RON")
-        st.write("[Detalii Produs](https://www.qnap.com/en/product/hs-453dx)")
+        st.image("https://s13emagst.akamaized.net/products/64235/64234525/images/res_c2ad6bc4273a8732257d17d515150d49.jpg", width=150)
+        st.write("Unitate de stocare in retea, Asustor, 4GB, 6xM.2 NVMe")
+        st.write("Preț: 4.103 RON")
+        st.write("[Detalii Produs](https://www.emag.ro/unitate-de-stocare-in-retea-asustor-4gb-6xm-2-nvme-fs6706t/pd/DN7KTTYBM/?ref=embedding_similar_model_1_1&provider=rec&recid=rec_88_cd062cb5bed572d1adaaa7342540037b364b51b4c0c99a31e49d86503f2bae1a_1724173712&scenario_ID=88)")
 
 with tab2:
     st.header("Soluții Software")
