@@ -1,53 +1,44 @@
 import streamlit as st
 import pandas as pd
 
-# O listă pentru a stoca echipamentele/soluțiile
-solutii = []
+# Funcția pentru a inițializa un DataFrame gol sau a-l încărca dintr-o sursă externă
+def load_data():
+    return pd.DataFrame(columns=["Avatar", "Descriere", "Preț", "Link"])
 
-# Funcție pentru a adăuga o soluție
-def adauga_solutie(nume, descriere):
-    solutii.append({'nume': nume, 'descriere': descriere, 'aprobat': False})
+# Funcția pentru a afișa și edita tabelul
+def display_table(df):
+    edited_df = st.data_editor(
+        df,
+        column_config={
+            "Avatar": st.column_config.ImageColumn("Avatar"),
+            "Descriere": "Descriere",
+            "Preț": st.column_config.NumberColumn("Preț", format="€{:,.2f}"),
+            "Link": st.column_config.LinkColumn("Link"),
+        },
+        num_rows="dynamic",
+    )
+    return edited_df
 
-# Funcție pentru a aproba o soluție
-def aproba_solutie(index):
-    solutii[index]['aprobat'] = True
-
-# Funcție pentru a elimina o soluție
-def elimina_solutie(index):
-    del solutii[index]
-
-# Funcție pentru a propune o altă soluție
-def propune_solutie():
-    st.sidebar.write("Propune o soluție nouă:")
-    nume = st.sidebar.text_input("Nume soluție:")
-    descriere = st.sidebar.text_area("Descriere soluție:")
-    if st.sidebar.button("Propune"):
-        adauga_solutie(nume, descriere)
-        st.sidebar.success(f"Soluția {nume} a fost propusă.")
-
-# Afișarea soluțiilor existente
-def afisare_solutii():
-    st.write("## Soluții propuse")
-    for index, solutie in enumerate(solutii):
-        st.write(f"### {solutie['nume']}")
-        st.write(solutie['descriere'])
-        if solutie['aprobat']:
-            st.write("✅ Aprobat")
-        else:
-            if st.button(f"Aprobă {solutie['nume']}", key=f"aproba_{index}"):
-                aproba_solutie(index)
-            if st.button(f"Elimină {solutie['nume']}", key=f"elimina_{index}"):
-                elimina_solutie(index)
-
-# Structura aplicației
+# Funcția principală
 def main():
-    st.title("Monitorizare Proiect Digitalizare")
+    st.title("Monitorizare Soluții Echipamente și Software")
 
-    # Secțiunea pentru proiectanți
-    propune_solutie()
+    # Inițializează sau încarcă datele
+    if "df" not in st.session_state:
+        st.session_state.df = load_data()
 
-    # Afișare soluții
-    afisare_solutii()
+    # Afișează tabelul și permite editarea
+    st.session_state.df = display_table(st.session_state.df)
+
+    # Buton pentru a adăuga un rând gol
+    if st.button("Adaugă un rând gol"):
+        st.session_state.df = st.session_state.df.append(
+            pd.Series(["", "", 0, ""], index=st.session_state.df.columns), ignore_index=True
+        )
+
+    # Buton pentru a salva datele (în sesiune, local sau în alt loc)
+    if st.button("Salvează modificările"):
+        st.success("Modificările au fost salvate!")
 
 if __name__ == "__main__":
     main()
