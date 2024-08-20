@@ -12,7 +12,7 @@ def display_table(df):
         column_config={
             "Avatar": st.column_config.ImageColumn(
                 "Preview Image",
-                help="Imagini pentru echipamente sau software",
+                help="Link către imaginea echipamentului sau software-ului",
             ),
             "Descriere": "Descriere",
             "Preț": st.column_config.NumberColumn("Preț", format="€{:,.2f}"),
@@ -44,17 +44,18 @@ def main():
     if st.button("Salvează modificările"):
         st.success("Modificările au fost salvate!")
 
-    # Upload imagini
-    st.write("## Încarcă imaginea echipamentului sau software-ului")
-    uploaded_image = st.file_uploader("Alege o imagine", type=["png", "jpg", "jpeg"])
-
-    if uploaded_image is not None:
-        # Salvează imaginea încărcată într-un folder temporar
+    # Exemplu de introducere manuală a unui link pentru imagine
+    st.write("## Adaugă un link către imagine")
+    new_image_url = st.text_input("Introdu link-ul către imagine:")
+    
+    if new_image_url:
+        # Adaugă link-ul ca un nou rând în tabel
         st.session_state.df = st.session_state.df.append(
-            pd.Series([uploaded_image, "", 0, ""], index=st.session_state.df.columns), ignore_index=True
+            pd.Series([new_image_url, "", 0, ""], index=st.session_state.df.columns), ignore_index=True
         )
-        st.success("Imaginea a fost încărcată și adăugată în tabel!")
+        st.success("Link-ul către imagine a fost adăugat în tabel!")
 
 if __name__ == "__main__":
     main()
+
 
