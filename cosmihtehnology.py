@@ -2,9 +2,23 @@ import streamlit as st
 import tabula
 import json
 import os
+import psutil
 
 # Titlul aplicației
 st.title("Extragere Tabele din PDF folosind Tabula")
+
+# Monitorizare resurse
+def get_resource_usage():
+    process = psutil.Process(os.getpid())
+    memory_info = process.memory_info().rss / 1024 ** 2  # Convert to MB
+    cpu_percent = psutil.cpu_percent(interval=1)
+    return memory_info, cpu_percent
+
+# Afiseaza utilizarea resurselor
+memory, cpu = get_resource_usage()
+st.sidebar.header("Utilizare Resurse")
+st.sidebar.write(f"Memorie utilizată: {memory:.2f} MB")
+st.sidebar.write(f"Utilizare CPU: {cpu:.2f}%")
 
 # Incarcă fișierul PDF
 uploaded_file = st.file_uploader("Încarcă PDF-ul", type="pdf")
